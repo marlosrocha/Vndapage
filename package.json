@@ -1,0 +1,27 @@
+{
+  "name": "vnda",
+  "version": "1.0.0",
+  "description": "Vnda page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marlosrocha/Vndapage.git"
+  },
+  "keywords": [
+    "Vnda",
+    "page",
+    "juice"
+  ],
+  "author": "Marlos Martins da Rocha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marlosrocha/Vndapage/issues"
+  },
+  "homepage": "https://github.com/marlosrocha/Vndapage#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
