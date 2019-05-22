@@ -1,6 +1,6 @@
 //colors
 $color_dove_gray_approx: #707070;
-$color_shark_approx: #212529;
+$color_shark_approx: #303030;
 $white: #fff;
 $color_japanese_laurel_approx: #008000;
 $color_forest_green_approx: #10ac10;
@@ -18,7 +18,7 @@ $font_2: PT Sans;
 $font_3: sans-serif;
 
 //urls
-$url_0: url(../imgs/Juice-Bottle-header-2.jpg);
+$url_0: url(../../src/imgs/Juice-Bottle-header-2.jpg);
 
 //@extend-elements
 //original selectors
@@ -42,21 +42,17 @@ $url_0: url(../imgs/Juice-Bottle-header-2.jpg);
 	width: inherit;
 	height: inherit;
 	background: $color_mine_shaft_approx;
-	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: .5s;
 }
 
 
 * {
-	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 }
 ::after {
-	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 }
 ::before {
-	//Instead of the line below you could use @include box-sizing($bs)
 	box-sizing: border-box;
 }
 body {
@@ -124,7 +120,14 @@ section {
 	padding: 50px 0;
 }
 a {
+	color: inherit;
 	text-decoration: none;
+}
+a:active {
+    outline-width: 0;
+}
+a:hover {
+    outline-width: 0;
 }
 .btn {
 	display: inline-block;
@@ -132,7 +135,6 @@ a {
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: middle;
-	//Instead of the line below you could use @include user-select($select)
 	user-select: none;
 	border: 1px solid transparent;
 	padding: .375rem .75rem;
@@ -140,9 +142,7 @@ a {
 	font-family: $font_2, $font_3;
 	font-size: 1rem;
 	line-height: 1.5;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: .25rem;
-	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 	&:focus {
 		text-decoration: none;
@@ -214,7 +214,6 @@ input[type="reset"] {
 	margin: 15px 0;
 	background: $color_mine_shaft_approx;
 	position: relative;
-	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: .5s;
 }
 .bars::after {
@@ -255,6 +254,19 @@ input[type="reset"] {
 			height: 400px;
 			float: right;
 		}
+	}
+}
+.hamburger:hover {
+	.bars {
+		background: transparent;
+	}
+	.bars::after {
+		top: 0;
+		transform: rotateZ(225deg);
+	}
+	.bars::before {
+		top: 0;
+		transform: rotateZ(135deg);
 	}
 }
 .products-grid {
@@ -387,7 +399,6 @@ input[type="reset"] {
 		width: 0;
 		font-size: 3rem;
 		overflow: hidden;
-		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 		transition: 2s ease-in-out;
 	}
 	&.swiper-slide-active {
@@ -406,7 +417,6 @@ input[type="reset"] {
 .swiper-slide__description {
 	opacity: 0;
 	position: absolute;
-	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 	transition: 1.5s;
 	width: 30%;
 	height: 300px;
@@ -421,6 +431,138 @@ input[type="reset"] {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+}
+
+footer {
+	.footer-brand{
+		position: relative;
+		text-align: center;
+		&::before{
+			content: '';
+			position: absolute;
+			width: 30%;
+			top: 0px;
+			left: 0px;
+			height: 1px;
+			background: $color_mine_shaft_approx;
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			width: 30%;
+			top: 0px;
+			right: 0px;
+			height: 1px;
+			background: $color_mine_shaft_approx;
+
+		}
+		img {
+			height: 30px;
+			width: auto;
+		}
+	}
+	.container-grid {
+		position: relative;
+		.col-third {
+			width: 33%;
+			display: inline-block;
+			vertical-align: top;
+			font-size: 1rem;
+			text-align: center;
+			.nav-footer{
+				display: block;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.footer-social{
+				display: flex;
+				justify-content: space-around;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				li{
+					display: inline-block;					
+					position: relative;
+					a{
+						border-radius: 50%;
+						-webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+						transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+						background: $white;
+						display: inline-block;
+						width: 2.5rem;
+						height: 2.5rem;
+						padding-top: 0.4375rem;
+						i::before{
+							color: $color_mine_shaft_approx;
+							font-size: 25px;
+						}
+						&::after{
+							content: '';
+							border-radius: 50%;
+							position: absolute;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%,-50%);
+							width: 0rem;
+							height: 0rem;
+							-webkit-transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+							transition: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+							background-color: $white;
+							z-index: -1;
+						}
+						&:hover{
+							background: transparent;
+							i::before{
+								color: $white;
+							}
+							&::after{
+								-webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+								transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+								background: $color_mine_shaft_approx;
+								width: 2.5rem;
+								height: 2.5rem;
+							}
+						}
+
+					}
+				}				
+			}
+			.form-newsletter{
+				input{
+					border-bottom: 0px;
+					font-size: 0.625rem; 
+					padding-left: 1.25rem; 
+					padding-right: 1.25rem;
+				}
+				button{
+					width: 100%;
+					border: 1px solid $color_shark_approx;    
+					background: $white;
+					letter-spacing: 3px;
+					font-weight: 700; 
+					-webkit-appearance: none; 
+					height: 3.125rem; 
+					outline: none;
+					font-size: 0.625rem; 
+				}
+			}
+		}
+	}
+}
+input{
+	text-align: center;
+	width: 100%;
+	border: 1px solid $color_shark_approx;    
+	background: $white;
+	letter-spacing: 3px;
+	font-weight: 700; 
+	-webkit-appearance: none; 
+	height: 3.125rem; 
+	outline: none;
+	&:focus {
+		background: $color_rice_flower_approx;
+	}
 }
 @media(min-width: 576px) {
 	.container {
@@ -449,18 +591,4 @@ input[type="reset"] {
 		grid-gap: 0 0;
 	}
 }
-.hamburger:hover {
-	.bars {
-		background: transparent;
-	}
-	.bars::after {
-		top: 0;
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotateZ(225deg);
-	}
-	.bars::before {
-		top: 0;
-		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
-		transform: rotateZ(135deg);
-	}
-}
+
