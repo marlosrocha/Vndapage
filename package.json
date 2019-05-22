@@ -22,6 +22,11 @@
   },
   "homepage": "https://github.com/marlosrocha/Vndapage#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.12.0"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1"
   }
 }
