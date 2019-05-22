@@ -18,43 +18,23 @@ button, input[type="submit"], input[type="reset"] {
   transition: .5s;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-::after {
-  box-sizing: border-box;
-}
-
-::before {
+*, ::after, ::before {
   box-sizing: border-box;
 }
 
 body {
-  color: #707070;
+  color: #272727;
   margin: 0;
   font-family: Playfair Display, serif;
   font-size: 15px;
   font-weight: 400;
   line-height: 1.5;
-  color: #303030;
+  color: #272727;
   text-align: left;
   background-color: #fff;
 }
 
-h1 {
-  font-family: PT Sans, sans-serif;
-}
-
-h2 {
-  font-family: PT Sans, sans-serif;
-}
-
-h3 {
-  font-family: PT Sans, sans-serif;
-}
-
-h4 {
+h1, h2, h3, h4 {
   font-family: PT Sans, sans-serif;
 }
 
@@ -62,46 +42,12 @@ button {
   font-family: PT Sans, sans-serif;
 }
 
-.img-fluid {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-}
-
 main {
   margin-top: 80px;
   display: block;
 }
 
-article {
-  display: block;
-}
-
-aside {
-  display: block;
-}
-
-figcaption {
-  display: block;
-}
-
-figure {
-  display: block;
-}
-
-footer {
-  display: block;
-}
-
-header {
-  display: block;
-}
-
-hgroup {
-  display: block;
-}
-
-nav {
+article, aside, figcaption, figure, footer, header, hgroup, nav {
   display: block;
 }
 
@@ -110,17 +56,80 @@ section {
   padding: 50px 0;
 }
 
+input, .button-frame {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border: 1px solid #272727;
+  letter-spacing: 3px;
+  font-weight: 700;
+  -webkit-appearance: none;
+  height: 3.125rem;
+  outline: none;
+  font-size: 0.8rem;
+  border-radius: 6px;
+}
+
+input:focus {
+  background: #ecffe4;
+}
+
+.button-frame {
+  position: relative;
+  overflow: hidden;
+}
+
+.button-frame span {
+  z-index: 2;
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-frame span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #303030;
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.button-frame:hover span {
+  color: #fff;
+}
+
+.button-frame:hover span::after {
+  right: 0%;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
-a:active {
+a:active, a:hover {
   outline-width: 0;
 }
 
-a:hover {
-  outline-width: 0;
+.m-t-10 {
+  margin-top: 10px;
+}
+
+.m-t-15 {
+  margin-top: 15px;
+}
+
+.m-t-20 {
+  margin-top: 20px;
+}
+
+.img-fluid {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
 }
 
 .btn {
@@ -140,11 +149,7 @@ a:hover {
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
-.btn:focus {
-  text-decoration: none;
-}
-
-.btn:hover {
+.btn:focus, .btn:hover {
   text-decoration: none;
 }
 
@@ -158,6 +163,10 @@ a:hover {
   color: #fff;
   background-color: #10ac10;
   border-color: #10ac10;
+}
+
+#products, #slider, footer {
+  padding: 100px 0;
 }
 
 .container {
@@ -228,7 +237,7 @@ a:hover {
   background: url(../../src/imgs/Juice-Bottle-header-2.jpg) no-repeat center center;
   margin: 0;
   background-size: cover;
-  height: 500px;
+  height: 800px;
   font-family: PT Sans, sans-serif;
 }
 
@@ -257,7 +266,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   width: 325px;
-  height: 400px;
+  height: 700px;
   float: right;
 }
 
@@ -273,6 +282,52 @@ a:hover {
 .hamburger:hover .bars::before {
   top: 0;
   transform: rotateZ(135deg);
+}
+
+#intro {
+  background: #f5e5d9;
+  padding: 100px 0;
+}
+
+#intro .container {
+  text-align: right;
+  position: relative;
+}
+
+#intro .container .intro-quote {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+  font-family: PT Sans, sans-serif;
+}
+
+#intro .container .intro-quote::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../../src/imgs/aspas.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#intro .container .intro-quote::before {
+  content: '';
+  position: absolute;
+  bottom: 50px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../../src/imgs/aspas-2.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#intro .container img {
+  height: 50px;
+  width: auto;
 }
 
 .products-grid {
@@ -437,7 +492,7 @@ a:hover {
   opacity: 0;
   position: absolute;
   transition: 1.5s;
-  width: 30%;
+  width: 35%;
   height: 300px;
   right: -300px;
   font-weight: 600;
@@ -445,12 +500,13 @@ a:hover {
 }
 
 .swiper-slide__product {
-  background: #707070;
+  background: #272727;
   width: 80%;
   height: 400px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  z-index: -2;
 }
 
 footer .footer-brand {
@@ -562,39 +618,19 @@ footer .container-grid .col-third .footer-social li a:hover::after {
   height: 2.5rem;
 }
 
+footer .container-grid .col-third .form-newsletter input, footer .container-grid .col-third .form-newsletter .button-frame {
+  width: 100%;
+  font-size: 0.625rem;
+}
+
 footer .container-grid .col-third .form-newsletter input {
-  border-bottom: 0px;
-  font-size: 0.625rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-footer .container-grid .col-third .form-newsletter button {
-  width: 100%;
-  border: 1px solid #303030;
-  background: #fff;
-  letter-spacing: 3px;
-  font-weight: 700;
-  -webkit-appearance: none;
-  height: 3.125rem;
-  outline: none;
-  font-size: 0.625rem;
-}
-
-input {
   text-align: center;
-  width: 100%;
-  border: 1px solid #303030;
-  background: #fff;
-  letter-spacing: 3px;
-  font-weight: 700;
-  -webkit-appearance: none;
-  height: 3.125rem;
-  outline: none;
+  border-radius: 6px 6px 0 0;
+  border-bottom: 0px;
 }
 
-input:focus {
-  background: #ecffe4;
+footer .container-grid .col-third .form-newsletter .button-frame {
+  border-radius: 0 0 6px 6px;
 }
 
 @media (min-width: 576px) {
