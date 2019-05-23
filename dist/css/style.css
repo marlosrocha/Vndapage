@@ -341,7 +341,7 @@ a:active, a:hover {
 }
 
 #header {
-  background-image: url(../../src/imgs/Juice-Bottle-header-2.jpg);
+  background-image: url(../../dist/imgs/Juice-Bottle-header-2-min.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   margin: 0;

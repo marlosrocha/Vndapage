@@ -17,7 +17,7 @@
         <button id="navbar-toggler" class="hamburger toggle-menu">
             <div class="bars"></div>
         </button>
-        <a id="link-header" class="navbar-brand" href="/"><img src="src/imgs/logo.png" alt="Vnda" title="Logo Vnda"></a>
+        <a id="link-header" class="navbar-brand" href="/"><img src="dist/imgs/logo-min.png" alt="Vnda" title="Logo Vnda"></a>
         <div class="navbar-buttons">
             <a href="/" >
                 <i class="icon-user" alt="Perfil" title="Perfil"></i>
@@ -100,14 +100,14 @@
             <div class="intro-quote">
                 Com adeptos no <b>Brasil e no Mundo</b>, criou-se muito <b>mais que uma marca</b>, e sim uma <b>cultura com objetivo</b> de não apenas vender produtos, mas sim celebrar a <b>saúde e o bom-humor</b>. Nossa filosofia relembra uma época onde fazer algo é mais <b>divertido</b> que ter algo. 
             </div>
-            <img src="src/imgs/logo.png" alt="Vnda" title="Logo Vnda">
+            <img src="dist/imgs/logo-min.png" alt="Vnda" title="Logo Vnda">
         </div>
     </section>
     <section id="products">
         <div class="container">
             <div class="products-grid">
                 <div class="product" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <img src="src/imgs/Juice-Bottle-apple.png" class="img-fluid" height="600px">
+                    <img src="dist/imgs/Juice-Bottle-apple-min.png" class="img-fluid" height="600px">
                     <div class="product__text">
                         <h2>APPLE VNDA JUICE</h2>
                         <p>Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.
@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="product" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <img src="src/imgs/Juice-Bottle-orange.png" class="img-fluid" height="600px">
+                    <img src="dist/imgs/Juice-Bottle-orange-min.png" class="img-fluid" height="600px">
                     <div class="product__text">
                         <h2>ORANGE VNDA JUICE</h2>
                         <p>Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="product" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <img src="src/imgs/Juice-Bottle-pear.png" class="img-fluid" height="600px">
+                    <img src="dist/imgs/Juice-Bottle-pear-min.png" class="img-fluid" height="600px">
                     <div class="product__text">
                         <h2>PEAR VNDA JUICE</h2>
                         <p>Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.
@@ -140,7 +140,7 @@
                     </div>
                 </div>
                 <div class="product" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <img src="src/imgs/Juice-Bottle-grape.png" class="img-fluid" height="600px">
+                    <img src="dist/imgs/Juice-Bottle-grape-min.png" class="img-fluid" height="600px">
                     <div class="product__text">
                         <h2>GRAPE VNDA JUICE</h2>
                         <p>Mussum Ipsum, cacilds vidis litro abertis. Leite de capivaris, leite de mula manquis sem cabeça.
@@ -156,7 +156,7 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="swiper-slide__product" style="background-image: url(src/imgs/slider-apple.jpg)">
+                        <div class="swiper-slide__product" style="background-image: url(dist/imgs/slider-apple-min.jpg)">
                         </div>
                         <div class="swiper-slide__description">
                             <h4>APPLE</h4>
@@ -167,7 +167,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="swiper-slide__product" style="background-image: url(src/imgs/slider-orange.jpg)">
+                        <div class="swiper-slide__product" style="background-image: url(dist/imgs/slider-orange-min.jpg)">
                         </div>
                         <div class="swiper-slide__description">
                             <h4>ORANGE</h4>
@@ -178,7 +178,7 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <div class="swiper-slide__product" style="background-image: url(src/imgs/slider-pear.jpg)">
+                        <div class="swiper-slide__product" style="background-image: url(dist/imgs/slider-pear-min.jpg)">
                         </div>
                         <div class="swiper-slide__description">
                             <h4>PEAR</h4>
@@ -189,7 +189,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="swiper-pagination"></div> -->
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
@@ -198,10 +197,9 @@
 </main>
 
 <footer>
-        <!-- data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" -->
     <div class="container">
         <div class="footer-brand">
-            <a id="link-footer" class="footer-brand-link" href="/"><img src="src/imgs/logo.png" alt="Vnda" title="Logo Vnda"></a>
+            <a id="link-footer" class="footer-brand-link" href="/"><img src="dist/imgs/logo-min.png" alt="Vnda" title="Logo Vnda"></a>
         </div>
         <div class="container-grid">
             <div class="col-third hide-on-mobile">
@@ -295,33 +293,7 @@
 
 <script src="src/libs/swiper-4.5.0/dist/js/swiper.min.js"></script>
 <script src="src/libs/aos-master/dist/aos.js"></script>
-<script>
-    if(isDesktop()) {
-        AOS.init();
-    }
-    var mySwiper = new Swiper ('.swiper-container', {
-        direction: 'horizontal',
-        loop: true,
-        pagination: {
-        el: '.swiper-pagination',
-        },
-        navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-        }
-    })
-    function isDesktop() {
-        if(window.innerWidth <= 768 && window.innerHeight <= 600) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-    function classToggle() {
-        const navs = document.querySelectorAll('.toggle-menu')
-        navs.forEach(nav => nav.classList.toggle('active'));
-    }
-    document.querySelector('#navbar-toggler').addEventListener('click', classToggle);
-</script>
+<script src="dist/js/script.js"></script>
+
 </body>
 </html>
