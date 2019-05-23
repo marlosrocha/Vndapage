@@ -311,10 +311,13 @@ a:active, a:hover {
 }
 
 #header {
-  background: url(../../src/imgs/Juice-Bottle-header-2.jpg) no-repeat center center;
+  background-image: url(../../src/imgs/Juice-Bottle-header-2.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
   margin: 0;
+  padding: 0;
   background-size: cover;
-  height: 700px;
+  height: 80vh;
   font-family: PT Sans, sans-serif;
 }
 
@@ -343,7 +346,7 @@ a:active, a:hover {
   align-items: center;
   justify-content: center;
   width: 325px;
-  height: 600px;
+  height: 80vh;
   float: right;
 }
 
@@ -770,5 +773,32 @@ footer .container-grid .col-third .form-newsletter .button-frame {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 0 0;
+  }
+  #header {
+    height: 70vh;
+    background-position: 55% center;
+  }
+  #header .container h1 {
+    font-size: 1.4rem;
+  }
+  #header .container p {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+  #header .container .btn {
+    font-size: 0.8rem;
+  }
+  #header .container .header-content {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #header {
+    background-position: right center;
+  }
+  #header .container .header-content {
+    margin: 0px !important;
+    width: 100%;
   }
 }

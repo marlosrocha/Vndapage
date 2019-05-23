@@ -310,10 +310,13 @@ a:active, a:hover {
 	bottom: 0%;
 }
 #header {
-	background: $url_0 no-repeat center center;
+	background-image: $url_0;
+	background-repeat: no-repeat;
+	background-position:  center center;
 	margin: 0;
+	padding: 0;
 	background-size: cover;
-	height: 700px;
+	height: 80vh;
 	font-family: $font_2, $font_3;
 	.container {
 		text-align: right;
@@ -336,7 +339,7 @@ a:active, a:hover {
 			align-items: center;
 			justify-content: center;
 			width: 325px;
-			height: 600px;
+			height: 80vh;
 			float: right;
 		}
 	}
@@ -721,6 +724,36 @@ footer {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: 0 0;
+	}
+	#header {
+		height: 70vh;
+		background-position: 55% center;
+		.container {
+			h1 {
+				font-size: 1.4rem;
+			}
+			p {
+				font-size: 5rem;
+				line-height: 5rem;
+			}
+			.btn {
+				font-size: 0.8rem;
+			}
+			.header-content {
+				height: 70vh;
+			}
+		}
+	}
+}
+@media(max-width:768px) {
+	#header {
+		background-position: right center;
+		.container {
+			.header-content {
+			margin: 0px !important;
+			width: 100%;
+			}
+		}
 	}
 }
 
