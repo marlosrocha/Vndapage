@@ -73,6 +73,50 @@ input:focus {
   background: #ecffe4;
 }
 
+#menu-tgl {
+  display: none;
+}
+
+#menu-tgl ~ .menu {
+  box-sizing: border-box;
+  position: fixed;
+  width: 350px;
+  height: 100%;
+  background: #101925;
+  font-family: Verdana;
+  padding-top: 20px;
+  padding-left: 40px;
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+#menu-tgl ~ .menu .menu-btn {
+  position: absolute;
+  box-sizing: border-box;
+  right: -120px;
+  width: 100px;
+  top: 20px;
+  font-family: Verdana;
+  cursor: pointer;
+  background-color: #101925;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#menu-tgl ~ .menu .menu-btn::after {
+  content: "ABRIR";
+}
+
+#menu-tgl:checked ~ .menu {
+  transform: translateX(0%);
+}
+
+#menu-tgl:checked ~ .menu .menu-btn::after {
+  content: "FECHAR";
+}
+
 .button-frame {
   position: relative;
   overflow: hidden;
@@ -186,11 +230,13 @@ a:active, a:hover {
 }
 
 .navbar {
+  position: fixed;
   background: #fff;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 200;
 }
 
 .navbar > .container {
@@ -198,6 +244,7 @@ a:active, a:hover {
   width: 100%;
   flex-wrap: wrap;
   align-items: center;
+  position: relative;
   justify-content: space-between;
 }
 
@@ -231,6 +278,36 @@ a:active, a:hover {
 
 .bars::before {
   top: -10px;
+}
+
+.hamburger.toggle-menu.active .bars {
+  background: transparent;
+}
+
+.hamburger.toggle-menu.active .bars::after {
+  top: 0;
+  transform: rotateZ(225deg);
+}
+
+.hamburger.toggle-menu.active .bars::before {
+  top: 0;
+  transform: rotateZ(135deg);
+}
+
+.menu {
+  position: fixed;
+  top: -100%;
+  bottom: 100%;
+  left: 0px;
+  right: 0px;
+  z-index: 100;
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu.active {
+  top: 0%;
+  bottom: 0%;
 }
 
 #header {
@@ -268,20 +345,6 @@ a:active, a:hover {
   width: 325px;
   height: 700px;
   float: right;
-}
-
-.hamburger:hover .bars {
-  background: transparent;
-}
-
-.hamburger:hover .bars::after {
-  top: 0;
-  transform: rotateZ(225deg);
-}
-
-.hamburger:hover .bars::before {
-  top: 0;
-  transform: rotateZ(135deg);
 }
 
 #intro {
@@ -494,7 +557,7 @@ a:active, a:hover {
   transition: 1.5s;
   width: 35%;
   height: 300px;
-  right: -300px;
+  right: 300px;
   font-weight: 600;
   font-size: 1.2em;
 }
@@ -517,8 +580,8 @@ footer .footer-brand {
 footer .footer-brand::before {
   content: '';
   position: absolute;
-  width: 30%;
-  top: 0px;
+  width: 33%;
+  top: 20px;
   left: 0px;
   height: 1px;
   background: #303030;
@@ -527,16 +590,17 @@ footer .footer-brand::before {
 footer .footer-brand::after {
   content: '';
   position: absolute;
-  width: 30%;
-  top: 0px;
+  width: 33%;
+  top: 20px;
   right: 0px;
   height: 1px;
   background: #303030;
 }
 
 footer .footer-brand img {
-  height: 30px;
+  height: 35px;
   width: auto;
+  margin-bottom: 15px;
 }
 
 footer .container-grid {
@@ -544,11 +608,40 @@ footer .container-grid {
 }
 
 footer .container-grid .col-third {
+  position: relative;
   width: 33%;
   display: inline-block;
   vertical-align: top;
   font-size: 1rem;
   text-align: center;
+}
+
+footer .container-grid .col-third li {
+  padding: 10px 0;
+}
+
+footer .container-grid .col-third .hover-underline {
+  position: relative;
+}
+
+footer .container-grid .col-third .hover-underline h4 {
+  display: initial;
+}
+
+footer .container-grid .col-third .hover-underline h4::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  bottom: -2px;
+  left: 0%;
+  right: 100%;
+  background: #303030;
+  -webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+footer .container-grid .col-third .hover-underline:hover h4::after {
+  right: 0%;
 }
 
 footer .container-grid .col-third .nav-footer {
@@ -616,6 +709,21 @@ footer .container-grid .col-third .footer-social li a:hover::after {
   background: #303030;
   width: 2.5rem;
   height: 2.5rem;
+}
+
+footer .container-grid .col-third .footer-newsletter {
+  position: relative;
+  margin-top: 100px;
+}
+
+footer .container-grid .col-third .footer-newsletter::before {
+  content: '';
+  position: absolute;
+  height: 4rem;
+  width: 1px;
+  background-color: #303030;
+  bottom: 100%;
+  margin-bottom: 15px;
 }
 
 footer .container-grid .col-third .form-newsletter input, footer .container-grid .col-third .form-newsletter .button-frame {

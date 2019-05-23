@@ -101,6 +101,45 @@ input {
 		background: $color_rice_flower_approx;
 	}
 }
+#menu-tgl {
+	display: none;
+}
+#menu-tgl ~ .menu {
+	box-sizing: border-box;
+	position: fixed;
+	width: 350px;
+	height: 100%;
+	background: #101925;
+	font-family: Verdana;
+	padding-top: 20px;
+	padding-left: 40px;
+	transform: translateX(-100%);
+	transition: transform 0.7s ease;
+}
+#menu-tgl ~ .menu .menu-btn {
+	position: absolute;
+	box-sizing: border-box;
+	right: -120px;
+	width: 100px;
+	top: 20px;
+	font-family: Verdana;
+	cursor: pointer;
+	background-color: #101925;
+	color: #fff;
+	padding: 10px 18px;
+	border-radius: 5px;
+	text-align: center;
+}
+#menu-tgl ~ .menu .menu-btn::after {
+	content:"ABRIR";
+}
+#menu-tgl:checked ~ .menu {
+	transform: translateX(0%);
+}
+#menu-tgl:checked ~ .menu .menu-btn::after {
+	content:"FECHAR";
+}
+
 .button-frame {
 	position: relative;
 	overflow: hidden;
@@ -198,16 +237,19 @@ a:active, a:hover {
 	z-index: 1030;
 }
 .navbar {
+	position: fixed;
 	background: $white;
 	padding: 1rem;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	z-index: 200;
 	> .container {
 		display: flex;
 		width: 100%;
 		flex-wrap: wrap;
 		align-items: center;
+		position: relative;
 		justify-content: space-between;
 	}
 }
@@ -240,6 +282,33 @@ a:active, a:hover {
 	@extend %extend_2;
 	top: -10px;
 }
+.hamburger.toggle-menu.active {
+	.bars {
+		background: transparent;
+	}
+	.bars::after {
+		top: 0;
+		transform: rotateZ(225deg);
+	}
+	.bars::before {
+		top: 0;
+		transform: rotateZ(135deg);
+	}
+}
+.menu {
+	position: fixed;
+	top:-100%;
+	bottom:100%;
+	left: 0px;
+	right: 0px;
+	z-index: 100;
+	-webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.menu.active {
+	top: 0%;
+	bottom: 0%;
+}
 #header {
 	background: $url_0 no-repeat center center;
 	margin: 0;
@@ -270,19 +339,6 @@ a:active, a:hover {
 			height: 700px;
 			float: right;
 		}
-	}
-}
-.hamburger:hover {
-	.bars {
-		background: transparent;
-	}
-	.bars::after {
-		top: 0;
-		transform: rotateZ(225deg);
-	}
-	.bars::before {
-		top: 0;
-		transform: rotateZ(135deg);
 	}
 }
 #intro {
@@ -476,7 +532,7 @@ a:active, a:hover {
 	transition: 1.5s;
 	width: 35%;
 	height: 300px;
-	right: -300px;
+	right: 300px;
 	font-weight: 600;
 	font-size: 1.2em;
 }
@@ -497,8 +553,8 @@ footer {
 		&::before {
 			content: '';
 			position: absolute;
-			width: 30%;
-			top: 0px;
+			width: 33%;
+			top: 20px;
 			left: 0px;
 			height: 1px;
 			background: $color_mine_shaft_approx;
@@ -506,26 +562,51 @@ footer {
 		&::after {
 			content: '';
 			position: absolute;
-			width: 30%;
-			top: 0px;
+			width: 33%;
+			top: 20px;
 			right: 0px;
 			height: 1px;
 			background: $color_mine_shaft_approx;
 
 		}
 		img {
-			height: 30px;
+			height: 35px;
 			width: auto;
+			margin-bottom: 15px;
 		}
 	}
 	.container-grid {
 		position: relative;
 		.col-third {
+			position: relative;
 			width: 33%;
 			display: inline-block;
 			vertical-align: top;
 			font-size: 1rem;
 			text-align: center;
+			li {
+				padding: 10px 0;
+			}
+			.hover-underline {
+				position: relative;
+				h4 {
+					display: initial;
+				}
+				h4::after {
+					content: '';
+					position: absolute;
+					height: 1px;
+					bottom: -2px;
+					left: 0%;
+					right: 100%;
+					background: $color_mine_shaft_approx;	
+					-webkit-transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+					transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);			
+				}
+				&:hover h4::after {
+					right: 0%;
+				}
+			}
 			.nav-footer {
 				display: block;
 				margin: 0;
@@ -584,6 +665,19 @@ footer {
 
 					}
 				}				
+			}
+			.footer-newsletter {
+				position: relative;
+				margin-top: 100px;
+				&::before {
+					content: '';
+					position: absolute;
+					height: 4rem;
+					width: 1px;
+					background-color: $color_mine_shaft_approx;
+					bottom: 100%;
+					margin-bottom: 15px;
+				}
 			}
 			.form-newsletter {
 				input, .button-frame {
