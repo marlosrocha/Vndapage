@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Site Teste - Marlos Martins da Rocha</title>
+<title>Vnda Juice - Marlos Martins da Rocha</title>
 <link rel="stylesheet" type="text/css" href="dist/css/style.min.css"/>
 <link rel="stylesheet" type="text/css" href="dist/css/icomoon.min.css"/>
 <link rel="stylesheet" type="text/css" href="src/libs/swiper-4.5.0/dist/css/swiper.min.css">
@@ -28,13 +28,13 @@
         </div>
     </div>
 </nav>
-<section class="menu toggle-menu">
+<section id="menu" class="toggle-menu">
     <div class="container">
         <div class="col-dual">
-            <div class="col-dual menu-thumb-apple">
-                <img src="src/imgs/Juice-Bottle-apple.png" class="img-fluid">
+            <div class="menu-img-container">
+                <img src="src/imgs/menu-img-2.jpeg" class="img-fluid">
             </div>
-            <div class="col-dual">
+            <div class="menu-links-container">
                 <h3>Vnda Store</h3>
                 <ul class="m-t-20">
                     <li>
@@ -56,10 +56,10 @@
             </div>
         </div>
         <div class="col-dual">
-            <div class="col-dual menu-thumb-orange">
-                <img src="src/imgs/Juice-Bottle-orange.png" class="img-fluid">
+            <div class="menu-img-container">
+                <img src="src/imgs/menu-img-1.jpeg" class="img-fluid">
             </div>
-            <div class="col-dual">
+            <div class="menu-links-container">
                 <h3>Sobre a Vnda</h3>
                 <ul class="m-t-20">
                     <li>
@@ -198,12 +198,13 @@
 </main>
 
 <footer>
-    <div class="container" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+        <!-- data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" -->
+    <div class="container">
         <div class="footer-brand">
             <a id="link-footer" class="footer-brand-link" href="/"><img src="src/imgs/logo.png" alt="Vnda" title="Logo Vnda"></a>
         </div>
         <div class="container-grid">
-            <div class="col-third">
+            <div class="col-third hide-on-mobile">
                 <ul class="nav-footer">
                     <li>
                         <a class="hover-underline" href="/">
@@ -269,6 +270,25 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-third show-on-mobile">
+                    <ul class="nav-footer">
+                        <li>
+                            <a class="hover-underline" href="/">
+                                <h4>PRIVACY POLICY</h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hover-underline" href="/">
+                                <h4>TERMS & CONDITIONS</h4>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="hover-underline" href="/">
+                                <h4>ABOUT</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
         </div>
     </div>
 </footer>
@@ -276,7 +296,9 @@
 <script src="src/libs/swiper-4.5.0/dist/js/swiper.min.js"></script>
 <script src="src/libs/aos-master/dist/aos.js"></script>
 <script>
-    AOS.init();
+    if(isDesktop()) {
+        AOS.init();
+    }
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'horizontal',
         loop: true,
@@ -288,6 +310,13 @@
         prevEl: '.swiper-button-prev',
         }
     })
+    function isDesktop() {
+        if(window.innerWidth <= 768 && window.innerHeight <= 600) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     function classToggle() {
         const navs = document.querySelectorAll('.toggle-menu')
         navs.forEach(nav => nav.classList.toggle('active'));
