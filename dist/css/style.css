@@ -404,7 +404,7 @@ a:active, a:hover {
   left: -20px;
   width: 50px;
   height: 50px;
-  background-image: url("../../src/imgs/aspas.svg");
+  background-image: url("../../dist/imgs/aspas.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -416,7 +416,7 @@ a:active, a:hover {
   right: -10px;
   width: 50px;
   height: 50px;
-  background-image: url("../../src/imgs/aspas-2.svg");
+  background-image: url("../../dist/imgs/aspas-2.svg");
   background-size: contain;
   background-repeat: no-repeat;
 }

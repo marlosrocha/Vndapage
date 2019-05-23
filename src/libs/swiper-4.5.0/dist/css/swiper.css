@@ -176,13 +176,13 @@
 }
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-  background-image: url("../../../../imgs/left-arrow.svg");
+  background-image: url("../../../../../dist/imgs/left-arrow.svg");
   left: 10px;
   right: auto;
 }
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-  background-image: url("../../../../imgs/right-arrow.svg");
+  background-image: url("../../../../../dist/imgs/right-arrow.svg");
   right: 10px;
   left: auto;
 }
